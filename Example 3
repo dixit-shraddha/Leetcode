@@ -11,4 +11,25 @@ values ('A','Bangalore','A@gmail.com',1,'CPU'),('A','Bangalore','A1@gmail.com',1
 
 Output columns
 --name, total_visit, most_visited_floor,resources used
+NAME	TOTAL_VISITS	MOSTLY_VISITED_FLOOR	RESOURCES
+A	3	1	CPU,DESKTOP
+B	3	2	DESKTOP,MONITOR
+
+--select * from entries
+
+
+
+with cte1 as (select name,listagg(distinct resources,',') as resources,count(*) as total_visits from entries group by name)
+,cte2 as (
+select name,floor,count(*)as cnt, rank() over (partition by name order by count(*) desc)rnk from entries group by name, floor) 
+
+select cte2.name,cte1.total_visits,cte2.floor as mostly_visited_floor,cte1.resources from cte2  
+join cte1 on cte2.name = cte1.name
+where rnk =1 order by 1 asc
+
+Output:
+NAME	TOTAL_VISITS	MOSTLY_VISITED_FLOOR	RESOURCES
+A	3	1	CPU,DESKTOP
+B	3	2	DESKTOP,MONITOR
+
 
