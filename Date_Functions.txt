@@ -1,3 +1,5 @@
+Datepart function is used to select any part of date
+
 select DATEPART(YEAR,'2024-05-28')
 union all
 select DATEPART(QUARTER,'2024-05-28')
