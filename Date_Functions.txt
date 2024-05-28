@@ -1,0 +1,27 @@
+select DATEPART(YEAR,'2024-05-28')
+union all
+select DATEPART(QUARTER,'2024-05-28')
+union all
+select DATEPART(MONTH,'2024-05-28')
+union all
+select DATEPART(DAYOFYEAR,'2024-05-28')
+union all
+select DATEPART(DAY,'2024-05-28')
+union all
+select DATEPART(WEEK,'2024-05-28')
+union all
+select DATEPART(WEEKDAY,'2024-05-28')
+union all
+select DATEPART(HOUR,'2024-05-28')
+
+
+Output:
+2024
+2
+5
+149
+28
+22
+3
+0
+2024
