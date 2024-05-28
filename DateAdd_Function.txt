@@ -1,0 +1,17 @@
+Date add function is used to add dats, week or year from given date
+
+select DATEADD(day,1,'2024-05-28')
+union all
+select DATEADD(WEEK,5,'2024-05-28')
+union all
+select DATEADD(YEAR,3,'2024-05-28')
+
+output:
+2024-05-29 00:00:00.000
+2024-07-02 00:00:00.000
+2027-05-28 00:00:00.000
+
+Comment:
+in firts query, day is incremented by 1 day
+in second query, week is added by 5 weeks
+in 3rd query, year is incremented by 3 years
