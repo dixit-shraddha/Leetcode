@@ -1,0 +1,17 @@
+Datediff function is used to calculate gap between two days based on year, day , week
+
+select DATEDIFF(day,'2024-05-21','2024-05-28')
+union all
+select DATEDIFF(YEAR,'2021-05-28','2024-05-01')
+union all
+select DATEDIFF(WEEK,'2023-05-28','2024-05-01')
+
+output:
+7
+3
+48
+
+Comment:
+1.Difference based on days betweeen two given dates
+2.Difference based on year betweeen two given dates
+3.Difference based on week betweeen two given dates
