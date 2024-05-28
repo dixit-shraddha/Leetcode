@@ -1,0 +1,17 @@
+--write a query to provide the date for nth occurence of sunday in given future date
+
+declare @todays_date date;
+declare @n int;
+
+set @todays_date = GETDATE(); --tuesday(2024-04-28)
+set @n = 3;
+
+--select DATEPART(WEEKDAY,@todays_date);
+
+--select DATEADD(day,8 - DATEPART(WEEKDAY,@todays_date),@todays_date); --to get first sunday
+
+select DATEADD(WEEK, @n-1, DATEADD(day,8 - DATEPART(WEEKDAY,@todays_date),@todays_date)); 
+--we are adding weeks less than 1 for defined n to calculat next two sundays using above line
+
+output:
+2024-06-16
